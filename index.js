@@ -2,17 +2,17 @@
 
 
     // revolutions per second
-    var angularSpeed = 0.1;
-    var lastTime = 0;
+    let angularSpeed = 0.1;
+    let lastTime = 0;
 
-    var cube = null;
+    let cube = null;
 
     // this function is executed on each animation frame
     function animate() {
         // update
-        var time = (new Date()).getTime();
-        var timeDiff = time - lastTime;
-        var angleChange = angularSpeed * timeDiff * 2 * Math.PI / 1000;
+        let time = (new Date()).getTime();
+        let timeDiff = time - lastTime;
+        let angleChange = angularSpeed * timeDiff * 2 * Math.PI / 1000;
         cube.rotation.y += angleChange;
         lastTime = time;
 
@@ -26,18 +26,18 @@
     }
 
     // renderer
-    var container = document.getElementById("container");
-    var renderer = new THREE.WebGLRenderer();
+    let container = document.getElementById("container");
+    let renderer = new THREE.WebGLRenderer();
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     container.appendChild(renderer.domElement);
 
 
     // camera
-    var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.z = 700;
 
     // scene
-    var scene = new THREE.Scene();
+    let scene = new THREE.Scene();
 
     // cube
     cube = new THREE.Mesh(new THREE.CubeGeometry(1, 1, 1), new THREE.MeshLambertMaterial({
@@ -49,21 +49,21 @@
     scene.add(cube);
 
     // add subtle ambient lighting
-    var ambientLight = new THREE.AmbientLight(0x888888);
+    let ambientLight = new THREE.AmbientLight(0x888888);
     scene.add(ambientLight);
 
     // directional lighting
-    var directionalLight = new THREE.DirectionalLight(0x666666);
+    let directionalLight = new THREE.DirectionalLight(0x666666);
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 
     // start animation
     animate();
 
-var $ = function(id) { return document.getElementById(id); };
+let $ = function(id) { return document.getElementById(id); };
 
     oninput= function() {
-    var width = parseInt($('inp-width').value),
+    let width = parseInt($('inp-width').value),
         height = parseInt($('inp-height').value),
         length = parseInt($('inp-length').value);
 

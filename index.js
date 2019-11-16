@@ -41,7 +41,7 @@
 
     // cube
     cube = new THREE.Mesh(new THREE.CubeGeometry(1, 1, 1), new THREE.MeshLambertMaterial({
-        color: '#cccccc'
+        color: '#deb887'
     }));
     cube.overdraw = true;
     cube.rotation.x = Math.PI * 0.1;
@@ -49,11 +49,11 @@
     scene.add(cube);
 
     // add subtle ambient lighting
-    let ambientLight = new THREE.AmbientLight(0x888888);
+    let ambientLight = new THREE.AmbientLight(0x222222);
     scene.add(ambientLight);
 
     // directional lighting
-    let directionalLight = new THREE.DirectionalLight(0x666666);
+    let directionalLight = new THREE.DirectionalLight(0x888888);
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 

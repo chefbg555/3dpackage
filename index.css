@@ -3,5 +3,8 @@
   height: 400px;
   margin: 10px auto;
   padding: 0px;
-  background-color: #FFC7A6;
+  /* background-color: #FFC7A6; */
+}
+#dimensionsNotRound{
+  color:burlywood;
 }

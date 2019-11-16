@@ -49,7 +49,7 @@
     scene.add(cube);
 
     // add subtle ambient lighting
-    let ambientLight = new THREE.AmbientLight(0x222222);
+    let ambientLight = new THREE.AmbientLight(0x333333);
     scene.add(ambientLight);
 
     // directional lighting

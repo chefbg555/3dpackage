@@ -2,9 +2,8 @@
 
 
     // revolutions per second
-    let angularSpeed = 0.1;
+    let angularSpeed = 0.03;
     let lastTime = 0;
-
     let cube = null;
 
     // this function is executed on each animation frame
@@ -31,7 +30,6 @@
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     container.appendChild(renderer.domElement);
 
-
     // camera
     let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.z = 700;
@@ -49,7 +47,7 @@
     scene.add(cube);
 
     // add subtle ambient lighting
-    let ambientLight = new THREE.AmbientLight(0x333333);
+    let ambientLight = new THREE.AmbientLight(0x444444);
     scene.add(ambientLight);
 
     // directional lighting
@@ -70,4 +68,37 @@ let $ = function(id) { return document.getElementById(id); };
     cube.scale.x = width;
     cube.scale.y = height;
     cube.scale.z = length;
+    
 };
+
+let rangeH = document.getElementById("inp-height")
+let fieldH = document.getElementById("numberH")
+rangeH.addEventListener('input', function (e) {
+  fieldH.value = e.target.value
+})
+fieldH.addEventListener('input', function (e) {
+  rangeH.value = e.target.value
+})
+
+let rangeL = document.getElementById("inp-length")
+let fieldL = document.getElementById("numberL")
+rangeL.addEventListener('input', function (e) {
+  fieldL.value = e.target.value
+})
+fieldL.addEventListener('input', function (e) {
+  rangeL.value = e.target.value
+})
+
+let rangeW = document.getElementById("inp-width")
+let fieldW = document.getElementById("numberW")
+rangeW.addEventListener('input', function (e) {
+  fieldW.value = e.target.value
+})
+fieldW.addEventListener('input', function (e) {
+  rangeW.value = e.target.value
+})
+
+function weightFunction() {
+    let w = document.getElementById("weightLbs").value
+    document.getElementById("weight").innerHTML = w
+}

@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div id="container"></div>
+    <div id="container">
+      
+    </div>
+    <div> 
+      <h1 id="weight">Lbs/ounces</h1>
+      
+    </div>
     <div class="inputRow clear" 
          id="dimensionsNotRound" 
          data-role="tooltip"> 
@@ -16,36 +22,65 @@
     <br/>
     <br/>
       <div> <span>Length</span>      
-      <input class="numeric-range" 
-               id="inp-length" 
-               type="range" 
-               min="50" 
-               max="750" 
-               value="50">
-    <br/>
+        <input id="inp-length" 
+              type="range" 
+               min="25" 
+               max="300" 
+               value="0"
+               />
+        <input id="numberL"
+               min="25"
+               max="300"
+               type="number"
+               value="0"
+               />
+    <br/> 
     <br/>
       </div>
       <div> <span>Width</span>
-        <input class="numeric-textbox" 
-               id="inp-width" 
+        <input id="inp-width" 
                type="range" 
-               min="50" 
-               max="750" 
-               value="50">
+               min="25" 
+               max="300" 
+               value="0"
+               />
+        <input id="numberW"
+               min="25"
+               max="300"
+               type="number"
+               value="0"
+               /> 
     <br/>
     <br/>
-      </div>
-      <div> <span>Height</span> 
-        <input class="numeric-textbox" 
-               id="inp-height" 
-               type="range" 
-               min="50" 
-               max="750" 
-               value="50">
-        <br/>
-        <br/>
-      </div>
     </div>
+    <div> <span>Height</span> 
+      <input id="inp-height" 
+              type="range" 
+              min="25" 
+              max="300" 
+              value="0"
+              />
+        <input id="numberH"
+                min="25"
+                max="300"
+                type="number"
+                value="0"
+                />  
+        <br/>
+        <br/>
+      </div>
+        <div><span>Weight</span>
+          <input id="weightLbs"
+                 min="0"
+                 max="250"
+                 type="number"
+                 value="0"
+          />
+          <button onclick="weightFunction()">Mandatory</button>
+      </div>
+      
+
+      </div>
       <script src="http://www.html5canvastutorials.com/libraries/three.min.js"></script>
       <script src="index.js" async defer></script>
     </body>
